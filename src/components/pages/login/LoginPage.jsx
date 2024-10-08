@@ -1,9 +1,22 @@
-import { useState } from "react";
 import LoginForm from "./LoginForm";
+import styled from "styled-components";
+import Logo from "../../reusable-ui/Logo";
 
-export default function LoginPage(){  
-
+export default function LoginPage() {
   //Affichage (render)
-  return <LoginForm />        
-
+  return (
+    <LoginPageStyled>
+      <Logo />
+      <LoginForm />
+    </LoginPageStyled>
+  );
 }
+
+const LoginPageStyled = styled.div`
+  background: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;
