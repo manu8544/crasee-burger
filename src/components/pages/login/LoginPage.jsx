@@ -13,7 +13,11 @@ export default function LoginPage() {
 }
 
 const LoginPageStyled = styled.div`
-  background: red;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("/images/burger-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
