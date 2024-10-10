@@ -14,15 +14,15 @@ const PrimaryButtonStyled = styled.button`
   width: 100%;
   background: ${theme.colors.primary};
   padding: 18px 0;
-  border-radius: 5px;
+  border-radius: ${theme.borderRadius.round};
   border: none;
   margin-top: 18px;
   border: 1px solid ${theme.colors.primary};
   cursor: pointer;
 
   color: ${theme.colors.white};
-  font-weight: 700;
-  font-size: 15px;
+  font-weight: ${theme.fonts.weights.bold};
+  font-size: ${theme.fonts.size.P0};
 
   display: flex;
   align-items: center;

@@ -24,10 +24,11 @@ const LogoStyled = styled.div`
 
     span {
       font-family: "Amatic SC", sans-serif;
-      font-weight: 700;
+      font-weight: ${theme.fonts.weights.bold};
       font-style: normal;
       /* font-size: 36px; */
-      font-size: 110px;
+      /* font-size: 110px; */
+      font-size: ${theme.fonts.size.P7};
     }
 
     img {

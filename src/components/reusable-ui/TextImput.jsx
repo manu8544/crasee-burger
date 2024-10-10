@@ -14,7 +14,7 @@ const TextImputStyled = styled.div`
   width: 100%;
   background: ${theme.colors.white};
   padding: 0 24px;
-  border-radius: 5px;
+  border-radius: ${theme.borderRadius.round};
   margin-top: 18px;
   border: 1px solid ${theme.colors.white};
 
@@ -24,12 +24,13 @@ const TextImputStyled = styled.div`
 
   .iconInput {
     color: ${theme.colors.greyMedium};
-    font-size: 15px;
+    font-size: ${theme.fonts.size.P0};
   }
 
   input {
     font-weight: 400;
-    font-size: 15px;
+    font-size: ${theme.fonts.size.P0};
+    color: ${theme.colors.dark};
     padding: 18px 0 18px 10px;
     border: none;
     width: 100%;
