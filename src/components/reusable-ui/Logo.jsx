@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
 
-export default function Logo() {
+export default function Logo({ ...extraProps }) {
   return (
-    <LogoStyled>
+    <LogoStyled {...extraProps}>
       <h1>
         <span>crazee</span>
         <img src="/images/logo-orange.png" alt="" />
@@ -20,21 +20,26 @@ const LogoStyled = styled.div`
     align-items: center;
     justify-content: center;
     margin: 0;
-    /* transform: scale(2.5); */
 
     span {
       font-family: "Amatic SC", sans-serif;
       font-weight: ${theme.fonts.weights.bold};
       font-style: normal;
-      /* font-size: 36px; */
-      /* font-size: 110px; */
-      font-size: ${theme.fonts.size.P7};
+      font-size: ${theme.fonts.size.P4};
     }
 
     img {
-      /* width: 80px; */
-      width: 200px;
-      margin: 0 20px;
+      width: 80px;
+      margin: 0 5px;
+    }
+  }
+
+  &.logo-home {
+    transform: scale(2.5);
+
+    h1 {
+      img {
+      }
     }
   }
 `;

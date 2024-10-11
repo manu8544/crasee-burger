@@ -50,7 +50,7 @@ const LoginFormStyled = styled.form`
   flex-direction: column;
   min-width: 400px;
   max-width: 500px;
-  margin-top: 40px;
+  margin-top: 85px;
 
   font-family: "Amatic SC", sans-serif;
   font-weight: 700;
