@@ -1,15 +1,14 @@
 import styled from "styled-components";
-import UserCard from "./UserCard";
+import Profile from "./Profile";
 
 export default function NavbarRightSide() {
   return (
-    <NavbarRightSideStyled className="right-side">
-      <UserCard />
+    <NavbarRightSideStyled>
+      <Profile />
     </NavbarRightSideStyled>
   );
 }
 
 const NavbarRightSideStyled = styled.div`
-  .right-side {
-  }
+  padding-right: 50px;
 `;
