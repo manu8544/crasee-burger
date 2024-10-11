@@ -34,7 +34,7 @@ const LogoStyled = styled.div`
     }
   }
 
-  &.logo-home {
+  &.logo-login-page {
     transform: scale(2.5);
 
     h1 {

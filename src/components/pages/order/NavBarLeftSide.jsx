@@ -12,7 +12,7 @@ export default function NavBarLeftSide() {
 
   return (
     <NavBarLeftSideStyled>
-      <Logo className="logo-page" onClick={handleClick} />
+      <Logo onClick={handleClick} />
     </NavBarLeftSideStyled>
   );
 }
