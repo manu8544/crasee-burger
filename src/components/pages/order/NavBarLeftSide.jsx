@@ -18,8 +18,6 @@ export default function NavBarLeftSide() {
 }
 
 const NavBarLeftSideStyled = styled.div`
-  width: 40%;
-
   .logo-page {
     cursor: pointer;
 

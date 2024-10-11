@@ -11,6 +11,5 @@ export default function NavbarRightSide() {
 
 const NavbarRightSideStyled = styled.div`
   .right-side {
-    width: 60%;
   }
 `;

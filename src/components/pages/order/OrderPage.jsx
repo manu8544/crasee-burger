@@ -18,10 +18,17 @@ const OrderPageStyled = styled.div`
   background: ${theme.colors.primary};
   height: 100vh;
   padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .container {
     background: ${theme.colors.white};
     border-radius: ${theme.borderRadius.extraRound};
     min-height: 100%;
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
   }
 `;
