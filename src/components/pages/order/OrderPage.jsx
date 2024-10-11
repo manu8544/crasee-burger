@@ -1,11 +1,10 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../../reusable-ui/Logo";
-import { BsPersonCircle } from "react-icons/bs";
 import { theme } from "../../../theme";
+import UserCard from "./UserCard";
 
 export default function OrderPage() {
-  const { username } = useParams();
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -21,17 +20,7 @@ export default function OrderPage() {
             <Logo className="logo-page" onClick={handleClick} />
           </div>
           <div className="right-side">
-            <div className="user">
-              <div className="user-left">
-                <div className="user-name">
-                  Hey, <span>{username}</span>
-                </div>
-                <Link to="/" className="user-deconnexion">
-                  Se déconnecter
-                </Link>
-              </div>
-              <BsPersonCircle className="user-picto" />
-            </div>
+            <UserCard />
           </div>
         </nav>
         <div className="main"></div>
@@ -71,41 +60,6 @@ const OrderPageStyled = styled.div`
       }
       .right-side {
         width: 60%;
-
-        .user {
-          display: flex;
-          justify-content: right;
-          align-items: center;
-
-          .user-left {
-            text-align: right;
-
-            .user-name {
-              font-size: 16px;
-              font-weight: 400;
-
-              span {
-                color: ${theme.colors.primary};
-                font-weight: 700;
-              }
-            }
-
-            a.user-deconnexion {
-              text-decoration: none;
-              font-size: 10px;
-              color: #747b91;
-              display: block;
-              margin-top: 4px;
-            }
-          }
-
-          .user-picto {
-            color: #747b91;
-            width: 36px;
-            height: 36px;
-            margin-left: 10px;
-          }
-        }
       }
     }
 
