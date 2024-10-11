@@ -6,6 +6,7 @@ export default function Main() {
 }
 
 const MainStyled = styled.div`
+  background: ${theme.colors.background_white};
   box-shadow: ${theme.shadows.strong};
   flex: 1;
   /* min-height: calc(100vh - 98px - 48px); */
