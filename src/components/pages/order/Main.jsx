@@ -25,13 +25,13 @@ const MainStyled = styled.div`
   border-bottom-left-radius: ${theme.borderRadius.extraRound};
   border-bottom-right-radius: ${theme.borderRadius.extraRound};
   overflow: auto;
+  padding: 50px 50px 150px;
 
   .liste-menus {
     display: grid;
-    /* grid-template: 50% 50% / 1fr 1fr 1fr 1fr; */
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 60px;
+    grid-column-gap: 30px;
     justify-items: center;
-    height: 100%;
-    overflow: auto;
   }
 `;
