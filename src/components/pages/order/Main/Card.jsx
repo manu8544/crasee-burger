@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import PrimaryButton from "../../reusable-ui/PrimaryButton";
-import { formatPrice } from "../../../utils/maths";
-import { theme } from "../../../theme";
+import PrimaryButton from "../../../reusable-ui/PrimaryButton";
+import { formatPrice } from "../../../../utils/maths";
+import { theme } from "../../../../theme";
 
 export default function Card({ item }) {
   return (
