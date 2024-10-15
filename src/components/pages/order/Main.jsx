@@ -24,11 +24,14 @@ const MainStyled = styled.div`
   /* min-height: calc(100vh - 98px - 48px); */
   border-bottom-left-radius: ${theme.borderRadius.extraRound};
   border-bottom-right-radius: ${theme.borderRadius.extraRound};
+  overflow: auto;
 
   .liste-menus {
     display: grid;
     /* grid-template: 50% 50% / 1fr 1fr 1fr 1fr; */
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
+    height: 100%;
+    overflow: auto;
   }
 `;

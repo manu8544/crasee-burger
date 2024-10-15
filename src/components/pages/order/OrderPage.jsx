@@ -25,7 +25,7 @@ const OrderPageStyled = styled.div`
   .container {
     background: ${theme.colors.white};
     border-radius: ${theme.borderRadius.extraRound};
-    min-height: 100%;
+    height: 100%;
     width: 100%;
     max-width: 1400px;
     display: flex;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PrimaryButton from "../../reusable-ui/PrimaryButton";
 
 export default function Card({ item }) {
   return (
@@ -9,7 +10,7 @@ export default function Card({ item }) {
       <div className="menu-titre">{item.title}</div>
       <div className="menu-info">
         <div className="menu-prix">{item.price}</div>
-        <button className="menu-bouton">Ajouter</button>
+        <PrimaryButton label={"Ajouter"} />
       </div>
     </CardStyled>
   );
@@ -18,7 +19,13 @@ export default function Card({ item }) {
 const CardStyled = styled.div`
   background: green;
   width: 240px;
-  margin: 20px 0;
+  height: 330px;
+  margin: 20px 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: space-around;
 
   .menu-image {
     width: 200px;
