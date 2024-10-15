@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import PrimaryButton from "../../reusable-ui/PrimaryButton";
+import { formatPrice } from "../../../utils/maths";
 
 export default function Card({ item }) {
   return (
@@ -9,7 +10,7 @@ export default function Card({ item }) {
       </div>
       <div className="menu-titre">{item.title}</div>
       <div className="menu-info">
-        <div className="menu-prix">{item.price}</div>
+        <div className="menu-prix">{formatPrice(item.price)}</div>
         <PrimaryButton label={"Ajouter"} />
       </div>
     </CardStyled>
