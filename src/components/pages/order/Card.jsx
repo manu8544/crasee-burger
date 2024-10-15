@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import PrimaryButton from "../../reusable-ui/PrimaryButton";
 import { formatPrice } from "../../../utils/maths";
+import { theme } from "../../../theme";
 
 export default function Card({ item }) {
   return (
@@ -18,10 +19,13 @@ export default function Card({ item }) {
 }
 
 const CardStyled = styled.div`
-  background: green;
+  background: ${theme.colors.white};
+  box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
+  border-radius: ${theme.borderRadius.extraRound};
+
   width: 240px;
   height: 330px;
-  margin: 20px 10px;
+  /* margin: 20px 10px; */
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -36,6 +40,28 @@ const CardStyled = styled.div`
       width: 100%;
       height: 100%;
       object-fit: contain;
+    }
+  }
+
+  .menu-titre {
+    font-family: "Amatic SC", sans-serif;
+    font-weight: ${theme.fonts.weights.bold};
+    font-style: normal;
+    font-size: ${theme.fonts.size.P4};
+  }
+
+  .menu-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .menu-prix {
+      color: ${theme.colors.primary};
+      width: 50%;
+    }
+
+    button {
+      width: 50%;
     }
   }
 `;
