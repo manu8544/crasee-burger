@@ -3,22 +3,22 @@ import PrimaryButton from "../../../reusable-ui/PrimaryButton";
 import { formatPrice } from "../../../../utils/maths";
 import { theme } from "../../../../theme";
 
-export default function Card({ item }) {
+export default function Product({ title, imageSource, price }) {
   return (
-    <CardStyled>
+    <ProductStyled>
       <div className="menu-image">
-        <img src={item.imageSource} />
+        <img src={imageSource} />
       </div>
-      <div className="menu-titre">{item.title}</div>
+      <div className="menu-titre">{title}</div>
       <div className="menu-info">
-        <div className="menu-prix">{formatPrice(item.price)}</div>
+        <div className="menu-prix">{formatPrice(price)}</div>
         <PrimaryButton label={"Ajouter"} />
       </div>
-    </CardStyled>
+    </ProductStyled>
   );
 }
 
-const CardStyled = styled.div`
+const ProductStyled = styled.div`
   background: ${theme.colors.white};
   box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
   border-radius: ${theme.borderRadius.extraRound};

@@ -1,18 +1,11 @@
 import styled from "styled-components";
 import { theme } from "../../../../theme";
-import { fakeMenu1, fakeMenu2 } from "../../../../fakeData/fakeMenu";
-import Card from "./Card";
+import Menu from "./Menu";
 
 export default function Main() {
-  console.log(fakeMenu2);
-
   return (
     <MainStyled>
-      <div className="liste-menus">
-        {fakeMenu2.map((item) => (
-          <Card key={item.id} item={item} />
-        ))}
-      </div>
+      <Menu />
     </MainStyled>
   );
 }
@@ -25,13 +18,7 @@ const MainStyled = styled.div`
   border-bottom-left-radius: ${theme.borderRadius.extraRound};
   border-bottom-right-radius: ${theme.borderRadius.extraRound};
   overflow: auto;
-  padding: 50px 50px 150px;
 
-  .liste-menus {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-row-gap: 60px;
-    grid-column-gap: 30px;
-    justify-items: center;
-  }
+  display: grid;
+  grid-template-columns: 1fr;
 `;
