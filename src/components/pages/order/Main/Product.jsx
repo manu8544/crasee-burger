@@ -48,6 +48,10 @@ const ProductStyled = styled.div`
     font-weight: ${theme.fonts.weights.bold};
     font-style: normal;
     font-size: ${theme.fonts.size.P4};
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .menu-info {
