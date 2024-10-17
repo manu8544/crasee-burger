@@ -1,24 +1,23 @@
 import styled from "styled-components";
-import PrimaryButton from "../../../reusable-ui/PrimaryButton";
-import { formatPrice } from "../../../../utils/maths";
-import { theme } from "../../../../theme";
+import PrimaryButton from "./PrimaryButton";
+import { theme } from "../../theme";
 
-export default function Product({ title, imageSource, price }) {
+export default function Card({ title, imageSource, leftDescription }) {
   return (
-    <ProductStyled>
+    <CardStyled>
       <div className="menu-image">
         <img src={imageSource} />
       </div>
       <div className="menu-titre">{title}</div>
       <div className="menu-info">
-        <div className="menu-prix">{formatPrice(price)}</div>
+        <div className="menu-prix">{leftDescription}</div>
         <PrimaryButton label={"Ajouter"} />
       </div>
-    </ProductStyled>
+    </CardStyled>
   );
 }
 
-const ProductStyled = styled.div`
+const CardStyled = styled.div`
   background: ${theme.colors.white};
   box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
   border-radius: ${theme.borderRadius.extraRound};
