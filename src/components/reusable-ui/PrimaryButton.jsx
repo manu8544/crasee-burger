@@ -33,4 +33,9 @@ const PrimaryButtonStyled = styled.button`
     border: 1px solid ${theme.colors.primary};
     transition: all 200ms ease-out;
   }
+
+  &:active {
+    background-color: ${theme.colors.primary};
+    color: ${theme.colors.white};
+  }
 `;
