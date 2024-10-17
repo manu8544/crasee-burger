@@ -39,6 +39,7 @@ export default function LoginForm() {
       <PrimaryButton
         label={"Accéder à mon espace"}
         Icon={<BsChevronRight className="iconButton" />}
+        className={"primary-button-login-form"}
       />
     </LoginFormStyled>
   );
@@ -70,5 +71,13 @@ const LoginFormStyled = styled.form`
     font-size: ${theme.fonts.size.P4};
     color: ${theme.colors.white};
     margin: 40px 0 0 0;
+  }
+
+  .primary-button-login-form {
+    margin-top: 18px;
+
+    .iconButton {
+      margin-left: 10px;
+    }
   }
 `;

@@ -16,7 +16,6 @@ const PrimaryButtonStyled = styled.button`
   padding: 18px 0;
   border-radius: ${theme.borderRadius.round};
   border: none;
-  margin-top: 18px;
   border: 1px solid ${theme.colors.primary};
   cursor: pointer;
 
@@ -28,14 +27,15 @@ const PrimaryButtonStyled = styled.button`
   align-items: center;
   justify-content: center;
 
-  span {
-    margin-right: 10px;
-  }
-
   &:hover {
     background: ${theme.colors.white};
     color: ${theme.colors.primary};
     border: 1px solid ${theme.colors.primary};
     transition: all 200ms ease-out;
+  }
+
+  &:active {
+    background-color: ${theme.colors.primary};
+    color: ${theme.colors.white};
   }
 `;
