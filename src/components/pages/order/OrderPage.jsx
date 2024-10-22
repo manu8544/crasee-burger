@@ -9,6 +9,14 @@ export default function OrderPage() {
       <div className="container">
         <Navbar />
         <Main />
+        <div className="adminPanel">
+          <div className="adminTabs">
+            <button>Réduire</button>
+            <button>Ajouter un produit</button>
+            <button>Modifier un produit</button>
+          </div>
+          <div className="adminContent">Contenu</div>
+        </div>
       </div>
     </OrderPageStyled>
   );
@@ -30,5 +38,30 @@ const OrderPageStyled = styled.div`
     max-width: 1400px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+
+    .adminPanel {
+      background: red;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: calc(100% - 48px);
+      margin: 24px;
+
+      border-bottom-left-radius: ${theme.borderRadius.extraRound};
+      border-bottom-right-radius: ${theme.borderRadius.extraRound};
+      overflow: hidden;
+
+      .adminTabs {
+        background: green;
+        padding: 0 0 0 70px;
+        height: 43px;
+      }
+
+      .adminContent {
+        background: blue;
+        height: 250px;
+      }
+    }
   }
 `;
