@@ -59,8 +59,11 @@ const OrderPageStyled = styled.div`
       }
 
       .adminContent {
-        background: blue;
+        background: ${theme.colors.white};
         height: 250px;
+        padding: 16px 20px;
+        font-size: ${theme.fonts.size.P0};
+        box-shadow: ${theme.shadows.subtle};
       }
     }
   }
