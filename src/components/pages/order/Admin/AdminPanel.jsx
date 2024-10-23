@@ -1,6 +1,6 @@
 import Tab from "../../../reusable-ui/Tab";
 import { AiOutlinePlus } from "react-icons/ai";
-import { FiChevronDown } from "react-icons/fi";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { MdModeEditOutline } from "react-icons/md";
 import { theme } from "../../../../theme";
 import styled from "styled-components";
@@ -11,12 +11,14 @@ export default function AdminPanel() {
   const { isModeAdmin } = useContext(adminContext);
   const [adminContent, setAdminContent] = useState("Ajouter un produit");
 
+  const [iconToggle, setIconToggle] = useState(<FiChevronDown />);
   const [isTogglePanelTab, setIsTogglePanelTab] = useState(false);
   const [isAddProductTab, setIsAddProductTab] = useState(true);
   const [isEditProductTab, setIsEditProductTab] = useState(false);
 
   const actionTogglePanel = () => {
     setIsTogglePanelTab(!isTogglePanelTab);
+    isTogglePanelTab ? setIconToggle(<FiChevronDown />) : setIconToggle(<FiChevronUp />);
   };
 
   const actionAddProduct = () => {
@@ -41,7 +43,7 @@ export default function AdminPanel() {
       <AdminPanelStyled>
         <div className="adminTabs">
           <Tab
-            Icon={<FiChevronDown />}
+            Icon={iconToggle}
             onClick={actionTogglePanel}
             className={isTogglePanelTab ? "selected" : ""}
           />
