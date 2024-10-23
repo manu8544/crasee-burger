@@ -40,5 +40,6 @@ const OrderPageStyled = styled.div`
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    position: relative;
   }
 `;
