@@ -4,18 +4,24 @@ import { FiChevronDown } from "react-icons/fi";
 import { MdModeEditOutline } from "react-icons/md";
 import { theme } from "../../../../theme";
 import styled from "styled-components";
+import { useContext } from "react";
+import adminContext from "../../../../context/adminContext";
 
 export default function AdminPanel() {
-  return (
-    <AdminPanelStyled>
-      <div className="adminTabs">
-        <Tab Icon={<FiChevronDown />} />
-        <Tab Icon={<AiOutlinePlus />} label={"Ajouter un produit"} className="selected" />
-        <Tab Icon={<MdModeEditOutline />} label={"Modifier un produit"} />
-      </div>
-      <div className="adminContent">Contenu</div>
-    </AdminPanelStyled>
-  );
+  const { isModeAdmin } = useContext(adminContext);
+
+  if (isModeAdmin) {
+    return (
+      <AdminPanelStyled>
+        <div className="adminTabs">
+          <Tab Icon={<FiChevronDown />} />
+          <Tab Icon={<AiOutlinePlus />} label={"Ajouter un produit"} className="selected" />
+          <Tab Icon={<MdModeEditOutline />} label={"Modifier un produit"} />
+        </div>
+        <div className="adminContent">Contenu</div>
+      </AdminPanelStyled>
+    );
+  }
 }
 
 const AdminPanelStyled = styled.div`

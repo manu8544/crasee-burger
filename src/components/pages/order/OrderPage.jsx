@@ -3,16 +3,23 @@ import { theme } from "../../../theme";
 import Navbar from "./Navbar/Navbar";
 import Main from "./main/Main";
 import AdminPanel from "./Admin/AdminPanel";
+import AdminContext from "../../../context/adminContext";
+import { useState } from "react";
 
 export default function OrderPage() {
+  const [isModeAdmin, setIsModeAdmin] = useState(false);
+  const adminContextValue = { isModeAdmin, setIsModeAdmin };
+
   return (
-    <OrderPageStyled>
-      <div className="container">
-        <Navbar />
-        <Main />
-        <AdminPanel />
-      </div>
-    </OrderPageStyled>
+    <AdminContext.Provider value={adminContextValue}>
+      <OrderPageStyled>
+        <div className="container">
+          <Navbar />
+          <Main />
+          <AdminPanel />
+        </div>
+      </OrderPageStyled>
+    </AdminContext.Provider>
   );
 }
 
