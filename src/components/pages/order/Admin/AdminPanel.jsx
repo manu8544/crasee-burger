@@ -9,10 +9,31 @@ import adminContext from "../../../../context/adminContext";
 
 export default function AdminPanel() {
   const { isModeAdmin } = useContext(adminContext);
+  const [adminContent, setAdminContent] = useState("Ajouter un produit");
+
   const [isTogglePanelTab, setIsTogglePanelTab] = useState(false);
+  const [isAddProductTab, setIsAddProductTab] = useState(true);
+  const [isEditProductTab, setIsEditProductTab] = useState(false);
 
   const actionTogglePanel = () => {
     setIsTogglePanelTab(!isTogglePanelTab);
+  };
+
+  const actionAddProduct = () => {
+    if (isAddProductTab) return;
+
+    setIsTogglePanelTab(false);
+    setIsAddProductTab(!isAddProductTab);
+    setIsEditProductTab(false);
+    setAdminContent("Ajouter un produit");
+  };
+  const actionEditProduct = () => {
+    if (isEditProductTab) return;
+
+    setIsTogglePanelTab(false);
+    setIsAddProductTab(false);
+    setIsEditProductTab(!isEditProductTab);
+    setAdminContent("modifier un produit");
   };
 
   if (isModeAdmin) {
@@ -24,10 +45,22 @@ export default function AdminPanel() {
             onClick={actionTogglePanel}
             className={isTogglePanelTab ? "selected" : ""}
           />
-          <Tab Icon={<AiOutlinePlus />} label={"Ajouter un produit"} className="selected" />
-          <Tab Icon={<MdModeEditOutline />} label={"Modifier un produit"} />
+          <Tab
+            Icon={<AiOutlinePlus />}
+            label={"Ajouter un produit"}
+            onClick={actionAddProduct}
+            className={isAddProductTab ? "selected" : ""}
+          />
+          <Tab
+            Icon={<MdModeEditOutline />}
+            label={"Modifier un produit"}
+            onClick={actionEditProduct}
+            className={isEditProductTab ? "selected" : ""}
+          />
         </div>
-        <div className={`adminContent ${isTogglePanelTab ? "visible" : ""}`}>Contenu</div>
+        <div className={`adminContent ${isTogglePanelTab ? "visible" : ""}`}>
+          {adminContent}
+        </div>
       </AdminPanelStyled>
     );
   }
