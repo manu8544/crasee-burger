@@ -2,22 +2,22 @@ import styled from "styled-components";
 import { theme } from "../../../theme";
 import Navbar from "./Navbar/Navbar";
 import Main from "./main/Main";
-import AdminContext from "../../../context/adminContext";
+import OrderContext from "../../../context/OrderContext";
 import { useState } from "react";
 
 export default function OrderPage() {
   const [isModeAdmin, setIsModeAdmin] = useState(false);
-  const adminContextValue = { isModeAdmin, setIsModeAdmin };
+  const orderContextValue = { isModeAdmin, setIsModeAdmin };
 
   return (
-    <AdminContext.Provider value={adminContextValue}>
+    <OrderContext.Provider value={orderContextValue}>
       <OrderPageStyled>
         <div className="container">
           <Navbar />
           <Main />
         </div>
       </OrderPageStyled>
-    </AdminContext.Provider>
+    </OrderContext.Provider>
   );
 }
 

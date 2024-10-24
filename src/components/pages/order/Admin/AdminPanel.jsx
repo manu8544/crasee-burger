@@ -5,10 +5,10 @@ import { MdModeEditOutline } from "react-icons/md";
 import { theme } from "../../../../theme";
 import styled from "styled-components";
 import { useContext, useState } from "react";
-import adminContext from "../../../../context/adminContext";
+import OrderContext from "../../../../context/OrderContext";
 
 export default function AdminPanel() {
-  const { isModeAdmin } = useContext(adminContext);
+  const { isModeAdmin } = useContext(OrderContext);
   const [adminContent, setAdminContent] = useState("Ajouter un produit");
 
   const [iconToggle, setIconToggle] = useState(<FiChevronDown />);
