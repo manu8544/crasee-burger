@@ -4,11 +4,9 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { MdModeEditOutline } from "react-icons/md";
 import { theme } from "../../../../theme";
 import styled from "styled-components";
-import { useContext, useState } from "react";
-import OrderContext from "../../../../context/OrderContext";
+import { useState } from "react";
 
 export default function AdminPanel() {
-  const { isModeAdmin } = useContext(OrderContext);
   const [adminContent, setAdminContent] = useState("Ajouter un produit");
 
   const [iconToggle, setIconToggle] = useState(<FiChevronDown />);
@@ -38,34 +36,30 @@ export default function AdminPanel() {
     setAdminContent("modifier un produit");
   };
 
-  if (isModeAdmin) {
-    return (
-      <AdminPanelStyled>
-        <div className="adminTabs">
-          <Tab
-            Icon={iconToggle}
-            onClick={actionTogglePanel}
-            className={isTogglePanelTab ? "selected" : ""}
-          />
-          <Tab
-            Icon={<AiOutlinePlus />}
-            label={"Ajouter un produit"}
-            onClick={actionAddProduct}
-            className={isAddProductTab ? "selected" : ""}
-          />
-          <Tab
-            Icon={<MdModeEditOutline />}
-            label={"Modifier un produit"}
-            onClick={actionEditProduct}
-            className={isEditProductTab ? "selected" : ""}
-          />
-        </div>
-        <div className={`adminContent ${isTogglePanelTab ? "visible" : ""}`}>
-          {adminContent}
-        </div>
-      </AdminPanelStyled>
-    );
-  }
+  return (
+    <AdminPanelStyled>
+      <div className="adminTabs">
+        <Tab
+          Icon={iconToggle}
+          onClick={actionTogglePanel}
+          className={isTogglePanelTab ? "selected" : ""}
+        />
+        <Tab
+          Icon={<AiOutlinePlus />}
+          label={"Ajouter un produit"}
+          onClick={actionAddProduct}
+          className={isAddProductTab ? "selected" : ""}
+        />
+        <Tab
+          Icon={<MdModeEditOutline />}
+          label={"Modifier un produit"}
+          onClick={actionEditProduct}
+          className={isEditProductTab ? "selected" : ""}
+        />
+      </div>
+      <div className={`adminContent ${isTogglePanelTab ? "visible" : ""}`}>{adminContent}</div>
+    </AdminPanelStyled>
+  );
 }
 
 const AdminPanelStyled = styled.div`
