@@ -72,12 +72,8 @@ const AdminPanelStyled = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   padding-top: 10px;
-
-  border-bottom-left-radius: ${theme.borderRadius.extraRound};
-  border-bottom-right-radius: ${theme.borderRadius.extraRound};
-  overflow: hidden;
 
   .adminTabs {
     padding: 0 0 0 70px;

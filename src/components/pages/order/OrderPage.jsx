@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { theme } from "../../../theme";
 import Navbar from "./Navbar/Navbar";
 import Main from "./main/Main";
-import AdminPanel from "./Admin/AdminPanel";
 import AdminContext from "../../../context/adminContext";
 import { useState } from "react";
 
@@ -16,7 +15,6 @@ export default function OrderPage() {
         <div className="container">
           <Navbar />
           <Main />
-          <AdminPanel />
         </div>
       </OrderPageStyled>
     </AdminContext.Provider>
@@ -39,7 +37,5 @@ const OrderPageStyled = styled.div`
     max-width: 1400px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    position: relative;
   }
 `;
