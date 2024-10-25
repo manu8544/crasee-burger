@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../../../theme";
 import Menu from "./Menu";
-import AdminPanel from "../Admin/AdminPanel";
+import Admin from "../Admin/Admin";
 import { useContext } from "react";
 import OrderContext from "../../../../context/OrderContext";
 
@@ -13,7 +13,7 @@ export default function Main() {
       {/* <div className="basket">Basket</div> */}
       <div className="menu-and-admin">
         <Menu />
-        {isModeAdmin && <AdminPanel />}
+        {isModeAdmin && <Admin />}
       </div>
     </MainStyled>
   );

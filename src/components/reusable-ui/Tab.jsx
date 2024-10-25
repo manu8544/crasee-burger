@@ -36,7 +36,7 @@ const TabStyled = styled.button`
     margin-left: 13px;
   }
 
-  &.selected {
+  &.is-active {
     background: ${theme.colors.background_dark};
     color: ${theme.colors.white};
     border-color: ${theme.colors.background_dark};
@@ -45,7 +45,7 @@ const TabStyled = styled.button`
   &:hover {
     text-decoration: underline;
   }
-  &:hover:not(.selected) {
+  &:hover:not(.is-active) {
     border-bottom-color: ${theme.colors.white};
   }
 `;

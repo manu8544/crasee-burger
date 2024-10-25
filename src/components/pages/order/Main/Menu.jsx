@@ -6,7 +6,6 @@ import { useState } from "react";
 import { formatPrice } from "../../../../utils/maths";
 
 export default function Menu() {
-  console.log(fakeMenu2);
   const [menu, setMenu] = useState(fakeMenu2);
 
   return (

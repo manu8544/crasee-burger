@@ -7,7 +7,9 @@ import { useState } from "react";
 
 export default function OrderPage() {
   const [isModeAdmin, setIsModeAdmin] = useState(false);
-  const orderContextValue = { isModeAdmin, setIsModeAdmin };
+  const [adminContent, setAdminContent] = useState(false);
+
+  const orderContextValue = { isModeAdmin, setIsModeAdmin, adminContent, setAdminContent };
 
   return (
     <OrderContext.Provider value={orderContextValue}>
