@@ -7,9 +7,20 @@ import { useState } from "react";
 
 export default function OrderPage() {
   const [isModeAdmin, setIsModeAdmin] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const [adminContent, setAdminContent] = useState(false);
+  const [currentTabSelected, setCurrentTabSelected] = useState("add");
 
-  const orderContextValue = { isModeAdmin, setIsModeAdmin, adminContent, setAdminContent };
+  const orderContextValue = {
+    isModeAdmin,
+    setIsModeAdmin,
+    isCollapsed,
+    setIsCollapsed,
+    adminContent,
+    setAdminContent,
+    currentTabSelected,
+    setCurrentTabSelected,
+  };
 
   return (
     <OrderContext.Provider value={orderContextValue}>
