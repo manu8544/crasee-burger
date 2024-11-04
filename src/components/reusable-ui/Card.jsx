@@ -19,7 +19,7 @@ export default function Card({ title, imageSource, leftDescription }) {
 
 const CardStyled = styled.div`
   background: ${theme.colors.white};
-  box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
+  box-shadow: ${theme.shadows.medium};
   border-radius: ${theme.borderRadius.extraRound};
 
   width: 240px;
