@@ -8,7 +8,6 @@ import { useState } from "react";
 export default function OrderPage() {
   const [isModeAdmin, setIsModeAdmin] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [adminContent, setAdminContent] = useState(false);
   const [currentTabSelected, setCurrentTabSelected] = useState("add");
 
   const orderContextValue = {
@@ -16,8 +15,6 @@ export default function OrderPage() {
     setIsModeAdmin,
     isCollapsed,
     setIsCollapsed,
-    adminContent,
-    setAdminContent,
     currentTabSelected,
     setCurrentTabSelected,
   };

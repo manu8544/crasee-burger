@@ -6,14 +6,8 @@ import OrderContext from "../../../../context/OrderContext";
 import { getTabsConfig } from "./getTabsConfig";
 
 export default function AdminTabs() {
-  const {
-    isCollapsed,
-    setIsCollapsed,
-    currentTabSelected,
-    setCurrentTabSelected,
-    adminContent,
-    setAdminContent,
-  } = useContext(OrderContext);
+  const { isCollapsed, setIsCollapsed, currentTabSelected, setCurrentTabSelected } =
+    useContext(OrderContext);
 
   const actionTogglePanel = () => {
     setIsCollapsed(!isCollapsed);
@@ -39,7 +33,7 @@ export default function AdminTabs() {
             Icon={tab.Icon}
             label={tab.label}
             onClick={() => selectTab(tab.index)}
-            className={tab.className}
+            className={currentTabSelected === tab.index ? "is-active" : ""}
           />
         );
       })}
