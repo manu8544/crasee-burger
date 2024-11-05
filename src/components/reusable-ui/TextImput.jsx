@@ -24,12 +24,12 @@ const TextImputStyled = styled.div`
 
   .iconInput {
     color: ${theme.colors.greyMedium};
-    font-size: ${theme.fonts.size.P0};
+    font-size: ${theme.fonts.size.SM};
   }
 
   input {
     font-weight: 400;
-    font-size: ${theme.fonts.size.P0};
+    font-size: ${theme.fonts.size.SM};
     color: ${theme.colors.dark};
     padding: 18px 0 18px 10px;
     border: none;

@@ -21,7 +21,7 @@ const PrimaryButtonStyled = styled.button`
 
   color: ${theme.colors.white};
   font-weight: ${theme.fonts.weights.bold};
-  font-size: ${theme.fonts.size.P0};
+  font-size: ${theme.fonts.size.SM};
 
   display: flex;
   align-items: center;
