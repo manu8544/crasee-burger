@@ -10,13 +10,13 @@ export default function AdminPanel() {
   const tabs = tabsConfig;
   const tabSelected = getTabSelected(tabs, currentTabSelected);
 
-  return <AdminPanelStyled>{tabSelected.label}</AdminPanelStyled>;
+  return <AdminPanelStyled>{tabSelected.Content}</AdminPanelStyled>;
 }
 
 const AdminPanelStyled = styled.div`
   background: ${theme.colors.white};
   height: 250px;
-  padding: 16px 20px;
+  padding: 30px 5%;
   font-size: ${theme.fonts.size.P0};
   box-shadow: ${theme.shadows.subtle};
 `;

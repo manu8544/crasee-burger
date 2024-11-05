@@ -39,6 +39,6 @@ export default function AdminTabs() {
 }
 
 const AdminTabsStyled = styled.div`
-  padding: 0 0 0 70px;
+  padding: 0 0 0 5%;
   display: flex;
 `;
