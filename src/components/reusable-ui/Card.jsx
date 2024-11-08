@@ -1,10 +1,29 @@
 import styled from "styled-components";
 import PrimaryButton from "./PrimaryButton";
 import { theme } from "../../theme";
+import { TiDelete } from "react-icons/ti";
+import { useContext } from "react";
+import OrderContext from "../../context/OrderContext";
 
-export default function Card({ title, imageSource, leftDescription }) {
+export default function Card({ id, title, imageSource, leftDescription, isModeAdmin }) {
+  const { menu, setMenu } = useContext(OrderContext);
+
+  const delCard = () => {
+    console.log("delCard", id);
+
+    const copyMenu = [...menu];
+    const updateMenu = copyMenu.filter((item) => item.id !== id);
+
+    setMenu(updateMenu);
+  };
+
   return (
     <CardStyled>
+      {isModeAdmin && (
+        <button className="del-card" onClick={delCard}>
+          <TiDelete />
+        </button>
+      )}
       <div className="menu-image">
         <img src={imageSource} />
       </div>
@@ -30,6 +49,31 @@ const CardStyled = styled.div`
   flex-direction: column;
   /* align-items: center; */
   justify-content: space-around;
+  position: relative;
+
+  button.del-card {
+    background: none;
+    padding: 0;
+    border: none;
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+    color: #ffa01b;
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    cursor: pointer;
+
+    &:hover {
+      color: #e25549;
+    }
+
+    &:active {
+      color: #ffa01b;
+    }
+  }
 
   .menu-image {
     width: 200px;
