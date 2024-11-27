@@ -29,6 +29,7 @@ export default function ProductForm() {
     event.preventDefault();
 
     handleAdd(newProductAdd);
+    setNewProduct(EMPTY_PRODUCT);
 
     setIsSubmit(true);
     setTimeout(() => {
@@ -45,7 +46,7 @@ export default function ProductForm() {
     <ProductFormStyled className="admin-product">
       <div className="product-image">
         {newProduct.imageSource ? (
-          <img src={newProduct.imageSource} alt="image non trouvée" />
+          <img src={newProduct.imageSource} alt={newProduct.title} />
         ) : (
           "Aucune Image"
         )}
