@@ -7,37 +7,28 @@ import { useContext, useState } from "react";
 import OrderContext from "../../../../context/OrderContext";
 import { FiCheck } from "react-icons/fi";
 
-export default function ProductForm() {
-  const { menu, setMenu } = useContext(OrderContext);
+const EMPTY_PRODUCT = {
+  id: "",
+  title: "",
+  imageSource: "",
+  price: 0,
+};
 
-  const [productName, setProductName] = useState("");
-  const [imageSrc, setImageSrc] = useState("");
-  const [productPrice, setProductPrice] = useState("");
+export default function ProductForm() {
+  const { handleAdd } = useContext(OrderContext);
+
+  const [newProduct, setNewProduct] = useState(EMPTY_PRODUCT);
   const [isSubmit, setIsSubmit] = useState(false);
+
+  const newProductAdd = {
+    ...newProduct,
+    id: crypto.randomUUID(),
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const copyMenu = [...menu];
-    const newId = menu.length > 0 ? Math.max(...menu.map((item) => item.id)) + 1 : 1;
-
-    copyMenu.push({
-      id: newId,
-      imageSource: event.target[1].value
-        ? event.target[1].value
-        : "../../../../../public/images/coming-soon.png",
-      title: event.target[0].value,
-      price: event.target[2].value,
-      quantity: 0,
-      isAvailable: true,
-      isAdvertised: false,
-    });
-
-    setMenu(copyMenu);
-
-    setProductName("");
-    setImageSrc("");
-    setProductPrice("");
+    handleAdd(newProductAdd);
 
     setIsSubmit(true);
     setTimeout(() => {
@@ -45,10 +36,19 @@ export default function ProductForm() {
     }, 2000);
   };
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setNewProduct({ ...newProduct, [name]: value });
+  };
+
   return (
     <ProductFormStyled className="admin-product">
       <div className="product-image">
-        {imageSrc ? <img src={imageSrc} alt="image non trouvée" /> : "Aucune Image"}
+        {newProduct.imageSource ? (
+          <img src={newProduct.imageSource} alt="image non trouvée" />
+        ) : (
+          "Aucune Image"
+        )}
       </div>
 
       <form className="product-form" onSubmit={handleSubmit}>
@@ -58,10 +58,10 @@ export default function ProductForm() {
           </span>
           <input
             type="text"
-            name="product_name"
-            id="product_name"
-            value={productName}
-            onChange={(e) => setProductName(e.target.value)}
+            name="title"
+            id="product_title"
+            value={newProduct.title}
+            onChange={handleChange}
             placeholder="Nom du produit (ex: Super Burger)"
           />
         </div>
@@ -72,10 +72,10 @@ export default function ProductForm() {
           </span>
           <input
             type="text"
-            name="product_img_link"
-            id="product_img_link"
-            value={imageSrc}
-            onChange={(e) => setImageSrc(e.target.value)}
+            name="imageSource"
+            id="product_image"
+            value={newProduct.imageSource}
+            onChange={handleChange}
             placeholder="Lien URL d'une image (ex: https://la-photo-de-mon-produit.png)"
           />
         </div>
@@ -86,10 +86,10 @@ export default function ProductForm() {
           </span>
           <input
             type="text"
-            name="product_price"
+            name="price"
             id="product_price"
-            value={productPrice}
-            onChange={(e) => setProductPrice(e.target.value)}
+            value={newProduct.price ? newProduct.price : ""}
+            onChange={handleChange}
             placeholder="Prix"
           />
         </div>

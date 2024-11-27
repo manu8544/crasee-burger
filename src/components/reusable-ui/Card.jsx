@@ -6,15 +6,10 @@ import { useContext } from "react";
 import OrderContext from "../../context/OrderContext";
 
 export default function Card({ id, title, imageSource, leftDescription, isModeAdmin }) {
-  const { menu, setMenu } = useContext(OrderContext);
+  const { handleDelete } = useContext(OrderContext);
 
   const delCard = () => {
-    console.log("delCard", id);
-
-    const copyMenu = [...menu];
-    const updateMenu = copyMenu.filter((item) => item.id !== id);
-
-    setMenu(updateMenu);
+    handleDelete(id);
   };
 
   return (

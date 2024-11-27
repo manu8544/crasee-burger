@@ -9,7 +9,7 @@ import { refreshPage } from "../../../../utils/window";
 import { theme } from "../../../../theme";
 
 export default function Menu() {
-  const { menu, setMenu, isModeAdmin } = useContext(OrderContext);
+  const { menu, isModeAdmin } = useContext(OrderContext);
 
   return menu.length > 0 ? (
     <MenuStyled>
