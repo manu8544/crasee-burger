@@ -8,6 +8,8 @@ import PrimaryButton from "../../../reusable-ui/PrimaryButton";
 import { refreshPage } from "../../../../utils/window";
 import { theme } from "../../../../theme";
 
+const IMAGE_DEFAULT = "/images/coming-soon.png";
+
 export default function Menu() {
   const { menu, isModeAdmin } = useContext(OrderContext);
 
@@ -18,7 +20,7 @@ export default function Menu() {
           key={id}
           id={id}
           title={title}
-          imageSource={imageSource}
+          imageSource={imageSource ? imageSource : IMAGE_DEFAULT}
           leftDescription={formatPrice(price)}
           isModeAdmin={isModeAdmin}
         />
