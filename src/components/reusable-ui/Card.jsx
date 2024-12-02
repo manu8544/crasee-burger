@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import PrimaryButton from "./PrimaryButton";
 import { theme } from "../../theme";
 import { TiDelete } from "react-icons/ti";
 import { useContext } from "react";
 import OrderContext from "../../context/OrderContext";
+import Button from "./Button";
 
 export default function Card({ id, title, imageSource, leftDescription, isModeAdmin }) {
   const { handleDelete } = useContext(OrderContext);
@@ -15,7 +15,7 @@ export default function Card({ id, title, imageSource, leftDescription, isModeAd
   return (
     <CardStyled>
       {isModeAdmin && (
-        <button className="del-card" onClick={delCard}>
+        <button className="del-card" aria-label="delete-button" onClick={delCard}>
           <TiDelete />
         </button>
       )}
@@ -25,7 +25,7 @@ export default function Card({ id, title, imageSource, leftDescription, isModeAd
       <div className="menu-titre">{title}</div>
       <div className="menu-info">
         <div className="menu-prix">{leftDescription}</div>
-        <PrimaryButton label={"Ajouter"} />
+        <Button className="primary-button" label={"Ajouter"} />
       </div>
     </CardStyled>
   );
@@ -102,8 +102,10 @@ const CardStyled = styled.div`
       width: 50%;
     }
 
-    button {
-      width: 50%;
+    .primary-button {
+      font-size: ${theme.fonts.size.XS};
+      cursor: pointer;
+      padding: 12px;
     }
   }
 `;

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useContext } from "react";
 import AdminTabs from "./AdminTabs";
-import AdminPanel from "./AdminPanel";
-import OrderContext from "../../../../context/OrderContext";
+import AdminPanel from "./AdminPanel/AdminPanel";
+import OrderContext from "../../../../../../context/OrderContext";
 
 export default function Admin() {
   const { isCollapsed } = useContext(OrderContext);

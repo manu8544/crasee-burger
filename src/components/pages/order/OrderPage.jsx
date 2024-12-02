@@ -12,6 +12,10 @@ export default function OrderPage() {
   const [currentTabSelected, setCurrentTabSelected] = useState("add");
   const [menu, setMenu] = useState(fakeMenu.MEDIUM);
 
+  const resetMenu = () => {
+    setMenu(fakeMenu.MEDIUM);
+  };
+
   const handleAdd = (newProductAdd) => {
     const menuCopy = [...menu];
 
@@ -39,6 +43,7 @@ export default function OrderPage() {
     currentTabSelected,
     setCurrentTabSelected,
     menu,
+    resetMenu,
     handleAdd,
     handleDelete,
   };

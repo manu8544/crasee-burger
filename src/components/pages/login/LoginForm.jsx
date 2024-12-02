@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { theme } from "../../../theme";
 import { BsChevronRight, BsPersonCircle } from "react-icons/bs";
-import TextImput from "../../reusable-ui/TextImput";
-import PrimaryButton from "../../reusable-ui/PrimaryButton";
+import TextInput from "../../reusable-ui/TextInput";
+import Button from "../../reusable-ui/Button";
 
 export default function LoginForm() {
   //State (état)
@@ -28,27 +28,23 @@ export default function LoginForm() {
       <h2>Bienvenue chez nous !</h2>
       <h3>Connectez-vous</h3>
 
-      <TextImput
+      <TextInput
         value={inputValue}
         onChange={handleChange}
-        required
         placeholder={"Entrez votre prénom"}
-        Icon={<BsPersonCircle className="iconInput" />}
+        required
+        Icon={<BsPersonCircle />}
+        className="input-login"
+        version="normal"
       />
 
-      <PrimaryButton
-        label={"Accéder à mon espace"}
-        Icon={<BsChevronRight className="iconButton" />}
-        className={"primary-button-login-form"}
-      />
+      <Button label={"Accéder à mon espace"} Icon={<BsChevronRight />} />
     </LoginFormStyled>
   );
 }
 
 const LoginFormStyled = styled.form`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  text-align: center;
   min-width: 400px;
   max-width: 500px;
   margin-top: 85px;
@@ -73,11 +69,7 @@ const LoginFormStyled = styled.form`
     margin: 40px 0 0 0;
   }
 
-  .primary-button-login-form {
-    margin-top: 18px;
-
-    .iconButton {
-      margin-left: 10px;
-    }
+  .input-login {
+    margin: 18px 0; // must be handled in Parent
   }
 `;
