@@ -1,17 +1,31 @@
 import styled from "styled-components";
-import PrimaryButton from "./PrimaryButton";
 import { theme } from "../../theme";
+import { TiDelete } from "react-icons/ti";
+import { useContext } from "react";
+import OrderContext from "../../context/OrderContext";
+import Button from "./Button";
 
-export default function Card({ title, imageSource, leftDescription }) {
+export default function Card({ id, title, imageSource, leftDescription, isModeAdmin }) {
+  const { handleDelete } = useContext(OrderContext);
+
+  const delCard = () => {
+    handleDelete(id);
+  };
+
   return (
     <CardStyled>
+      {isModeAdmin && (
+        <button className="del-card" aria-label="delete-button" onClick={delCard}>
+          <TiDelete />
+        </button>
+      )}
       <div className="menu-image">
         <img src={imageSource} />
       </div>
       <div className="menu-titre">{title}</div>
       <div className="menu-info">
         <div className="menu-prix">{leftDescription}</div>
-        <PrimaryButton label={"Ajouter"} />
+        <Button className="primary-button" label={"Ajouter"} />
       </div>
     </CardStyled>
   );
@@ -30,6 +44,31 @@ const CardStyled = styled.div`
   flex-direction: column;
   /* align-items: center; */
   justify-content: space-around;
+  position: relative;
+
+  button.del-card {
+    background: none;
+    padding: 0;
+    border: none;
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+    color: #ffa01b;
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    cursor: pointer;
+
+    &:hover {
+      color: #e25549;
+    }
+
+    &:active {
+      color: #ffa01b;
+    }
+  }
 
   .menu-image {
     width: 200px;
@@ -63,8 +102,10 @@ const CardStyled = styled.div`
       width: 50%;
     }
 
-    button {
-      width: 50%;
+    .primary-button {
+      font-size: ${theme.fonts.size.XS};
+      cursor: pointer;
+      padding: 12px;
     }
   }
 `;
